@@ -1,0 +1,60 @@
+cabal-version:      2.4
+name:               converter
+version:            0.1.0.0
+synopsis:
+
+-- A longer description of the package.
+-- description:
+homepage:
+
+-- A URL where users can report bugs.
+-- bug-reports:
+license:            MIT
+license-file:       LICENSE
+author:             kentarow10
+maintainer:         kenfan.fun@icloud.com
+
+-- A copyright notice.
+-- copyright:
+-- category:
+
+library
+    exposed-modules:  MyLib
+
+    -- Modules included in this library but not exported.
+    -- other-modules:    Common
+                      
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    
+                    base ^>=4.14.3.0
+                    -- , containers >= 0.5.9
+                    -- , parsec
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
+executable converter
+    main-is:          Main.hs
+
+    -- Modules included in this executable, other than Main.
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:
+        base ^>=4.14.3.0,
+        converter
+
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
+test-suite converter-test
+    default-language: Haskell2010
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+                      , src
+    main-is:          MyLibTest.hs
+    build-depends:    base ^>=4.14.3.0
+                      , hspec >= 1.3
+                      , QuickCheck
+                      , converter
+                      , parsec
