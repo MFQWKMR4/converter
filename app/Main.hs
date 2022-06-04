@@ -5,4 +5,4 @@ import MyLib
 
 main :: IO ()
 main = do
-    MyLib.router
+    MyLib.wapper
